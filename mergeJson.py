@@ -16,9 +16,6 @@ if __name__ == "__main__":
     global metaJson_obj
     newJson = {}
 
-    with open("D:\\source\\remote\\JsonParse\\1.json", "w+") as w:
-        w.write("123123")
-
     with open(MetaJson, "r") as json_fp:
         metaJson_obj = json.load(json_fp)
 
@@ -40,6 +37,7 @@ if __name__ == "__main__":
                 tmpobj[ruleid] = dict(ipsRuleJson_obj[ruleid])
                 ruleTemplate = dict(ruleTemplate.items() + tmpobj.items())
 
+    print "ruletemplate"
     with open("D:\\source\\remote\\JsonParse\\new.json", "w+") as newjson:
         newjson.write(ruleTemplate)
 
